@@ -1,17 +1,24 @@
 <hello name="{{ name }}"></hello>
 <p>
-  Start editing to see some magic happen :)
+	Start editing to see some magic happen :)
 </p>
 <h2>{{title}}</h2>
 
 <form>
-  <label>Select month: </label>
-  <select>
+	<label>Select month: </label>
+	<select (change)="changeMonth($event)">
     <option  *ngFor="let i of month"> {{ i }} </option>
   </select>
-  <br>
-  <span *ngIf="isAvailable; else condition1 then condition2"></span>
+	<br>
+	<span *ngIf="isAvailable; else condition1 then condition2"></span>
 
-  <ng-template #condition1> Condition is valid </ng-template>
-  <ng-template #condition2> Condition is Invalid </ng-template>
+	<ng-template #condition1> Condition is valid </ng-template>
+	<ng-template #condition2> Condition is Invalid </ng-template>
+
+	<br>
+	<button (click)="myFunction($event)">Click here</button>
+  <h1>Custom Pipe</h1> 
+  <b>Square root of 25 is: {{25 | sqrt}}</b> 
+  <br/> 
+  <b>Square root of 625 is: {{625 | sqrt}}</b>
 </form>
